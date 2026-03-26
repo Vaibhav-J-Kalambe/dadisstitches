@@ -23,23 +23,23 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 40% 30%, rgba(196,113,79,.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 40% 30%, rgba(224,112,144,.08) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 80%, rgba(91,122,82,.06) 0%, transparent 50%);
     }
 
     /* shirt art backgrounds for product cards */
     .bg-seersucker {
       background: repeating-linear-gradient(
-        0deg, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 8px,
-        rgba(180,200,220,.3) 8px, rgba(180,200,220,.3) 10px
-      ), linear-gradient(135deg, #C8DCF0 0%, #A8C4E4 100%);
+        90deg, rgba(224,112,144,.08) 0px, rgba(224,112,144,.08) 1px,
+        transparent 1px, transparent 14px
+      ), linear-gradient(160deg, #FFF0F4 0%, #FDD8E4 100%);
     }
-    .bg-organic { background: linear-gradient(135deg, #E8EAD8 0%, #D4D8B8 100%); }
-    .bg-linen { background: linear-gradient(135deg, #F0E8D0 0%, #DDD0B4 100%); }
-    .bg-navy { background: linear-gradient(135deg, #2A3C5A 0%, #1A2C4A 100%); }
-    .bg-black { background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%); }
-    .bg-green { background: linear-gradient(135deg, #4A6A44 0%, #3A5A34 100%); }
-    .bg-custom { background: linear-gradient(135deg, #E8D4B8 0%, #D4BC98 100%); }
+    .bg-organic { background: linear-gradient(135deg, #FDE8D0 0%, #F9D0C0 100%); }
+    .bg-linen { background: linear-gradient(135deg, #FFF0E0 0%, #FDE0CC 100%); }
+    .bg-navy { background: linear-gradient(135deg, #5A1E38 0%, #3C1025 100%); }
+    .bg-black { background: linear-gradient(135deg, #3C1828 0%, #280A18 100%); }
+    .bg-green { background: linear-gradient(135deg, #3A6058 0%, #284840 100%); }
+    .bg-custom { background: linear-gradient(135deg, #FDE8D0 0%, #F9C8D8 100%); }
 
     /* Embroidery SVG colours on cards */
     .emb-white { color: #FFF8F0; }
@@ -51,16 +51,12 @@
 <!-- SCROLL PROGRESS BAR -->
 <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="announcement-bar">
-  <div class="announcement-bar-inner">
-    <span>✦ Free shipping on orders over ₹2,500</span><span>·</span>
-    <span>Each stitch takes 4 hours of love &amp; skill</span><span>·</span>
-    <span>Made by India's grandmothers ✦</span><span>·</span>
-    <span>✦ Free shipping on orders over ₹2,500</span><span>·</span>
-    <span>Each stitch takes 4 hours of love &amp; skill</span><span>·</span>
-    <span>Made by India's grandmothers ✦</span><span>·</span>
-  </div>
+<!-- ANNOUNCEMENT BAR — fade-cycle -->
+<div class="announce-cycle" id="announceCycle">
+  <div class="announce-msg active">✦ Free shipping on orders over ₹2,500</div>
+  <div class="announce-msg">✦ Each stitch takes 4 hours of love &amp; skill</div>
+  <div class="announce-msg">✦ Made by India's grandmothers with pride</div>
+  <div class="announce-msg">✦ 100% fair wage — ₹400 earned per shirt</div>
 </div>
 
 <!-- NAV -->
@@ -230,18 +226,18 @@
 <!-- EMOTION BANNER -->
 <div class="emotion-banner reveal">
   <div class="thread-divider">
-    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 0 20 4 Q30 8 40 4" stroke="#EDD9A3" stroke-width="1.5" fill="none"/></svg>
-    <svg width="8" height="8" viewBox="0 0 8 8" fill="#EDD9A3"><circle cx="4" cy="4" r="2"/></svg>
-    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 8 20 4 Q30 0 40 4" stroke="#EDD9A3" stroke-width="1.5" fill="none"/></svg>
+    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 0 20 4 Q30 8 40 4" stroke="#C4714F" stroke-width="1.5" fill="none"/></svg>
+    <svg width="8" height="8" viewBox="0 0 8 8" fill="#C4714F"><circle cx="4" cy="4" r="2"/></svg>
+    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 8 20 4 Q30 0 40 4" stroke="#C4714F" stroke-width="1.5" fill="none"/></svg>
   </div>
   <p class="emotion-banner-quote">
     "You're not buying a shirt.<br/>You're wearing someone's story."
   </p>
   <p class="emotion-banner-sub">— The Dadi's Stitches Promise</p>
   <div class="thread-divider">
-    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 0 20 4 Q30 8 40 4" stroke="#EDD9A3" stroke-width="1.5" fill="none"/></svg>
-    <svg width="8" height="8" viewBox="0 0 8 8" fill="#EDD9A3"><circle cx="4" cy="4" r="2"/></svg>
-    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 8 20 4 Q30 0 40 4" stroke="#EDD9A3" stroke-width="1.5" fill="none"/></svg>
+    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 0 20 4 Q30 8 40 4" stroke="#C4714F" stroke-width="1.5" fill="none"/></svg>
+    <svg width="8" height="8" viewBox="0 0 8 8" fill="#C4714F"><circle cx="4" cy="4" r="2"/></svg>
+    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 8 20 4 Q30 0 40 4" stroke="#C4714F" stroke-width="1.5" fill="none"/></svg>
   </div>
 </div>
 
@@ -356,7 +352,7 @@
               <svg width="160" height="180" viewBox="0 0 160 180" fill="none">
                 <path d="M35 35 L15 65 L35 72 L35 175 L125 175 L125 72 L145 65 L125 35 L105 45 Q80 53 55 45 Z" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
                 <!-- Daisy cluster -->
-                <circle cx="80" cy="108" r="5" fill="#EDD9A3"/>
+                <circle cx="80" cy="108" r="5" fill="#C4714F"/>
                 <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(0 80 108)"/>
                 <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(30 80 108)"/>
                 <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(60 80 108)"/>
@@ -366,14 +362,14 @@
                 <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(180 80 108)"/>
                 <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(210 80 108)"/>
                 <path d="M80 121 Q78 135 76 148" stroke="#A8C49E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                <circle cx="57" cy="125" r="4" fill="#EDD9A3"/>
+                <circle cx="57" cy="125" r="4" fill="#C4714F"/>
                 <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(0 57 125)"/>
                 <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(60 57 125)"/>
                 <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(120 57 125)"/>
                 <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(180 57 125)"/>
                 <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(240 57 125)"/>
                 <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(300 57 125)"/>
-                <circle cx="103" cy="122" r="4" fill="#EDD9A3"/>
+                <circle cx="103" cy="122" r="4" fill="#C4714F"/>
                 <ellipse cx="103" cy="113" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(0 103 122)"/>
                 <ellipse cx="103" cy="113" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(60 103 122)"/>
                 <ellipse cx="103" cy="113" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(120 103 122)"/>
@@ -429,7 +425,7 @@
                 <ellipse cx="88" cy="75" rx="3" ry="5" fill="#F0A898" transform="rotate(216 88 83)"/>
                 <ellipse cx="88" cy="75" rx="3" ry="5" fill="#F0A898" transform="rotate(288 88 83)"/>
                 <path d="M80 118 Q80 100 80 88" stroke="#A8C49E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                <circle cx="80" cy="85" r="5" fill="#EDD9A3"/>
+                <circle cx="80" cy="85" r="5" fill="#C4714F"/>
                 <ellipse cx="80" cy="77" rx="2.5" ry="4.5" fill="rgba(255,255,255,0.9)" transform="rotate(0 80 85)"/>
                 <ellipse cx="80" cy="77" rx="2.5" ry="4.5" fill="rgba(255,255,255,0.9)" transform="rotate(60 80 85)"/>
                 <ellipse cx="80" cy="77" rx="2.5" ry="4.5" fill="rgba(255,255,255,0.9)" transform="rotate(120 80 85)"/>
@@ -599,7 +595,7 @@
             <path d="M135 292 Q150 296 168 292" stroke="#6B9060" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
             <!-- Needle in right hand -->
             <line x1="214" y1="264" x2="198" y2="280" stroke="#8B6A50" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-            <circle cx="215" cy="263" r="3" fill="#C8973A" opacity="0.7"/>
+            <circle cx="215" cy="263" r="3" fill="#C4714F" opacity="0.7"/>
             <!-- Thread -->
             <path d="M215 265 Q220 258 225 262" stroke="#C4714F" stroke-width="1" fill="none" opacity="0.5" stroke-dasharray="2 1"/>
           </svg>
@@ -654,8 +650,8 @@
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
             <circle cx="20" cy="16" r="8" stroke="#5B7A52" stroke-width="2" fill="none"/>
             <path d="M8 36 Q8 26 20 26 Q32 26 32 36" stroke="#5B7A52" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M26 8 Q30 6 32 10" stroke="#C8973A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <circle cx="31" cy="11" r="2" fill="#C8973A" opacity="0.6"/>
+            <path d="M26 8 Q30 6 32 10" stroke="#C4714F" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <circle cx="31" cy="11" r="2" fill="#C4714F" opacity="0.6"/>
           </svg>
         </div>
         <span class="process-step-num">2</span>
@@ -883,7 +879,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand-logo">
-          <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#C4714F" stroke-width="1.5" fill="none"/><path d="M8 14 Q11 8, 14 14 Q17 20, 20 14" stroke="#C4714F" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="8" cy="14" r="1.5" fill="#C4714F"/><path d="M8 10 L8 6 L10 6" stroke="#EDD9A3" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#C4714F" stroke-width="1.5" fill="none"/><path d="M8 14 Q11 8, 14 14 Q17 20, 20 14" stroke="#C4714F" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="8" cy="14" r="1.5" fill="#C4714F"/><path d="M8 10 L8 6 L10 6" stroke="#C4714F" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Dadi's Stitches
         </div>
         <p class="footer-brand-desc">A social enterprise from Mumbai, India — creating dignified livelihoods for skilled grandmothers through the art of hand embroidery.</p>
@@ -958,6 +954,18 @@
     btn.style.background = 'var(--sage)';
     setTimeout(() => { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
   }
+
+  // Announcement bar — fade-cycle
+  (function() {
+    const msgs = document.querySelectorAll('#announceCycle .announce-msg');
+    let cur = 0;
+    if (msgs.length < 2) return;
+    setInterval(() => {
+      msgs[cur].classList.remove('active');
+      cur = (cur + 1) % msgs.length;
+      msgs[cur].classList.add('active');
+    }, 3000);
+  })();
 
   // Scroll animations
   const observer = new IntersectionObserver((entries) => {

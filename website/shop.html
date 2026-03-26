@@ -7,18 +7,18 @@
   <meta name="description" content="Browse our full collection of hand-embroidered shirts and tees, each stitched by a skilled grandmother (Dadi) in India." />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .bg-seersucker { background: repeating-linear-gradient(0deg, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 8px, rgba(180,200,220,.3) 8px, rgba(180,200,220,.3) 10px), linear-gradient(135deg, #C8DCF0 0%, #A8C4E4 100%); }
-    .bg-organic { background: linear-gradient(135deg, #E8EAD8 0%, #D4D8B8 100%); }
-    .bg-linen { background: linear-gradient(135deg, #F0E8D0 0%, #DDD0B4 100%); }
-    .bg-navy { background: linear-gradient(135deg, #2A3C5A 0%, #1A2C4A 100%); }
-    .bg-black { background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%); }
-    .bg-green { background: linear-gradient(135deg, #4A6A44 0%, #3A5A34 100%); }
-    .bg-rose { background: linear-gradient(135deg, #E8C4C0 0%, #D4A8A4 100%); }
-    .bg-tan { background: linear-gradient(135deg, #D4B896 0%, #C0A078 100%); }
-    .bg-custom { background: linear-gradient(135deg, #E8D4B8 0%, #D4BC98 100%); }
-    .bg-white-shirt { background: linear-gradient(135deg, #F5F0E8 0%, #E8E0D0 100%); }
-    .bg-mustard { background: linear-gradient(135deg, #D4A030 0%, #B88020 100%); }
-    .bg-dusty { background: linear-gradient(135deg, #C4A898 0%, #B09080 100%); }
+    .bg-seersucker { background: repeating-linear-gradient(90deg, rgba(224,112,144,.08) 0px, rgba(224,112,144,.08) 1px, transparent 1px, transparent 14px), linear-gradient(160deg, #FFF0F4 0%, #FDD8E4 100%); }
+    .bg-organic { background: linear-gradient(135deg, #FDE8D0 0%, #F9D0C0 100%); }
+    .bg-linen { background: linear-gradient(135deg, #FFF0E0 0%, #FDE0CC 100%); }
+    .bg-navy { background: linear-gradient(135deg, #5A1E38 0%, #3C1025 100%); }
+    .bg-black { background: linear-gradient(135deg, #3C1828 0%, #280A18 100%); }
+    .bg-green { background: linear-gradient(135deg, #3A6058 0%, #284840 100%); }
+    .bg-rose { background: linear-gradient(135deg, #F9C8D8 0%, #F0A8C0 100%); }
+    .bg-tan { background: linear-gradient(135deg, #FDE8D0 0%, #F9D0C0 100%); }
+    .bg-custom { background: linear-gradient(135deg, #FDE8D0 0%, #F9C8D8 100%); }
+    .bg-white-shirt { background: linear-gradient(135deg, #FFF8F4 0%, #FDE8F0 100%); }
+    .bg-mustard { background: linear-gradient(135deg, #E8906A 0%, #D07050 100%); }
+    .bg-dusty { background: linear-gradient(135deg, #F9C8D8 0%, #E8A8C0 100%); }
 
     .shop-hero {
       background: var(--cream);
@@ -32,30 +32,101 @@
       position: relative;
       z-index: 1;
     }
-    .shop-hero-strip {
+    /* ---- Trust badges strip ---- */
+    .trust-strip {
       background: var(--brown-dark);
-      padding: 16px;
+      padding: 28px 0 32px;
       overflow: hidden;
-      display: flex;
-      gap: 48px;
-      white-space: nowrap;
     }
-    .shop-strip-inner {
+    .trust-badges {
       display: flex;
-      gap: 48px;
-      animation: marquee 20s linear infinite;
+      justify-content: center;
+      align-items: stretch;
+      gap: 0;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
-    .shop-strip-inner span {
+    .trust-badge {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 0 24px;
+      border-right: 1px solid rgba(237,217,163,.18);
+      opacity: 0;
+      transform: translateY(28px);
+      animation: badgeRise 0.65s cubic-bezier(0.34,1.56,0.64,1) forwards;
+      animation-delay: var(--d, 0s);
+    }
+    .trust-badge:last-child { border-right: none; }
+    @keyframes badgeRise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .trust-badge-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(200,151,58,.15);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-badge-icon svg { color: var(--gold-light); }
+    .trust-badge strong {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      line-height: 1;
+      font-weight: 600;
+    }
+    .trust-badge span {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(237,217,163,.6);
+      text-align: center;
+    }
+
+    /* ---- Cycling announcement bar ---- */
+    .announce-cycle {
+      background: var(--brown-dark);
+      padding: 10px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 38px;
+    }
+    .announce-msg {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
       font-size: 0.78rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold-light);
       font-weight: 500;
-      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translate(-50%, calc(-50% + 12px));
+      white-space: nowrap;
     }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .announce-msg.active {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 600px) {
+      .trust-badges { gap: 0; }
+      .trust-badge { padding: 0 12px; }
+      .trust-badge strong { font-size: 1.2rem; }
+      .trust-badge span { font-size: 0.65rem; }
+      .trust-badge-icon { width: 32px; height: 32px; }
+    }
+    @media (max-width: 420px) {
+      .trust-badges { flex-wrap: wrap; gap: 24px 0; }
+      .trust-badge { flex: 1 1 50%; border-right: none; }
+      .trust-badge:nth-child(odd) { border-right: 1px solid rgba(237,217,163,.18); }
     }
     .sort-bar {
       display: flex;
@@ -90,16 +161,12 @@
 <!-- SCROLL PROGRESS BAR -->
 <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="announcement-bar">
-  <div class="announcement-bar-inner">
-    <span>✦ Free shipping on orders over ₹2,500</span><span>·</span>
-    <span>Each stitch takes 4 hours of love &amp; skill</span><span>·</span>
-    <span>Made by India's grandmothers ✦</span><span>·</span>
-    <span>✦ Free shipping on orders over ₹2,500</span><span>·</span>
-    <span>Each stitch takes 4 hours of love &amp; skill</span><span>·</span>
-    <span>Made by India's grandmothers ✦</span><span>·</span>
-  </div>
+<!-- ANNOUNCEMENT BAR — fade-cycle -->
+<div class="announce-cycle" id="announceCycle">
+  <div class="announce-msg active">✦ Free shipping on orders over ₹2,500</div>
+  <div class="announce-msg">✦ Each stitch takes 4 hours of love &amp; skill</div>
+  <div class="announce-msg">✦ Made by India's grandmothers with pride</div>
+  <div class="announce-msg">✦ 100% fair wage — ₹400 earned per shirt</div>
 </div>
 
 <!-- NAV -->
@@ -154,21 +221,41 @@
     <h1 style="margin-bottom:12px;">Not mass-produced.<br/><em style="color:var(--terracotta);">Mass-loved.</em></h1>
     <p style="max-width:520px; margin:0 auto;">Every shirt in our collection carries a name — the name of the Dadi who stitched it. Browse, fall in love, wear a story.</p>
   </div>
-  <div class="shop-hero-strip">
-    <div class="shop-strip-inner">
-      <span>✦ Hand-Embroidered</span><span>·</span>
-      <span>✦ Fair Wage Guaranteed</span><span>·</span>
-      <span>✦ 4+ Hours of Craft Per Shirt</span><span>·</span>
-      <span>✦ Premium Cotton &amp; Linen</span><span>·</span>
-      <span>✦ India-Made with Love</span><span>·</span>
-      <span>✦ Free Shipping Over ₹2,500</span><span>·</span>
-      <span>✦ Hand-Embroidered</span><span>·</span>
-      <span>·</span>
-      <span>✦ Fair Wage Guaranteed</span><span>·</span>
-      <span>✦ 4+ Hours of Craft Per Shirt</span><span>·</span>
-      <span>✦ Premium Cotton &amp; Linen</span><span>·</span>
-      <span>✦ India-Made with Love</span><span>·</span>
-      <span>✦ Free Shipping Over ₹2,500</span><span>·</span>
+  <div class="trust-strip">
+    <div class="trust-badges">
+
+      <div class="trust-badge" style="--d:0.1s">
+        <div class="trust-badge-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <strong>12+</strong>
+        <span>Unique Designs</span>
+      </div>
+
+      <div class="trust-badge" style="--d:0.22s">
+        <div class="trust-badge-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <strong>4 hrs</strong>
+        <span>Craft per shirt</span>
+      </div>
+
+      <div class="trust-badge" style="--d:0.34s">
+        <div class="trust-badge-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <strong>₹400</strong>
+        <span>To every Dadi</span>
+      </div>
+
+      <div class="trust-badge" style="--d:0.46s">
+        <div class="trust-badge-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <strong>100%</strong>
+        <span>Hand-embroidered</span>
+      </div>
+
     </div>
   </div>
 </div>
@@ -284,7 +371,7 @@
             <div class="product-shirt-art bg-green">
               <svg width="140" height="160" viewBox="0 0 140 160" fill="none">
                 <path d="M28 28 L10 55 L28 62 L28 150 L112 150 L112 62 L130 55 L112 28 L94 38 Q70 46 46 38Z" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                <circle cx="70" cy="98" r="5" fill="#EDD9A3"/>
+                <circle cx="70" cy="98" r="5" fill="#C4714F"/>
                 <ellipse cx="70" cy="85" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(0 70 98)"/>
                 <ellipse cx="70" cy="85" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(30 70 98)"/>
                 <ellipse cx="70" cy="85" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(60 70 98)"/>
@@ -293,14 +380,14 @@
                 <ellipse cx="70" cy="85" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(150 70 98)"/>
                 <ellipse cx="70" cy="85" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(180 70 98)"/>
                 <ellipse cx="70" cy="85" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(210 70 98)"/>
-                <circle cx="50" cy="113" r="4" fill="#EDD9A3"/>
+                <circle cx="50" cy="113" r="4" fill="#C4714F"/>
                 <ellipse cx="50" cy="104" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(0 50 113)"/>
                 <ellipse cx="50" cy="104" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(60 50 113)"/>
                 <ellipse cx="50" cy="104" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(120 50 113)"/>
                 <ellipse cx="50" cy="104" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(180 50 113)"/>
                 <ellipse cx="50" cy="104" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(240 50 113)"/>
                 <ellipse cx="50" cy="104" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(300 50 113)"/>
-                <circle cx="90" cy="111" r="4" fill="#EDD9A3"/>
+                <circle cx="90" cy="111" r="4" fill="#C4714F"/>
                 <ellipse cx="90" cy="102" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(0 90 111)"/>
                 <ellipse cx="90" cy="102" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(60 90 111)"/>
                 <ellipse cx="90" cy="102" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(120 90 111)"/>
@@ -568,7 +655,7 @@
                 <ellipse cx="70" cy="78" rx="5" ry="9" fill="white" opacity="0.8" transform="rotate(150 70 92)"/>
                 <ellipse cx="70" cy="78" rx="5" ry="9" fill="white" opacity="0.8" transform="rotate(180 70 92)"/>
                 <ellipse cx="70" cy="78" rx="5" ry="9" fill="white" opacity="0.8" transform="rotate(210 70 92)"/>
-                <circle cx="70" cy="92" r="4" fill="#EDD9A3"/>
+                <circle cx="70" cy="92" r="4" fill="#C4714F"/>
                 <path d="M70 106 Q68 118 66 128" stroke="#A8C49E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
               </svg>
             </div>
@@ -667,12 +754,12 @@
         <span style="font-size:0.78rem; color:var(--text-light);">Every stitch hand-done, certified</span>
       </div>
       <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="10" width="24" height="18" rx="3" stroke="#C4714F" stroke-width="1.5" fill="rgba(196,113,79,.08)"/><path d="M10 10 Q10 4 16 4 Q22 4 22 10" stroke="#C4714F" stroke-width="1.5" fill="none"/></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="10" width="24" height="18" rx="3" stroke="#C4714F" stroke-width="1.5" fill="rgba(224,112,144,.08)"/><path d="M10 10 Q10 4 16 4 Q22 4 22 10" stroke="#C4714F" stroke-width="1.5" fill="none"/></svg>
         <strong style="font-family:var(--font-serif); color:var(--brown-dark); font-size:0.92rem;">Secure Checkout</strong>
         <span style="font-size:0.78rem; color:var(--text-light);">UPI, Cards, Net Banking</span>
       </div>
       <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 28 Q4 20 4 10 A12 12 0 0 1 28 10 Q28 20 16 28Z" stroke="#C8973A" stroke-width="1.5" fill="rgba(200,151,58,.1)"/><path d="M16 8 L17.5 13 L23 13 L18.5 16 L20 21 L16 18 L12 21 L13.5 16 L9 13 L14.5 13 Z" fill="#C8973A" opacity="0.8"/></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 28 Q4 20 4 10 A12 12 0 0 1 28 10 Q28 20 16 28Z" stroke="#C4714F" stroke-width="1.5" fill="rgba(200,151,58,.1)"/><path d="M16 8 L17.5 13 L23 13 L18.5 16 L20 21 L16 18 L12 21 L13.5 16 L9 13 L14.5 13 Z" fill="#C4714F" opacity="0.8"/></svg>
         <strong style="font-family:var(--font-serif); color:var(--brown-dark); font-size:0.92rem;">Fair Wage Promise</strong>
         <span style="font-size:0.78rem; color:var(--text-light);">₹400 guaranteed per shirt</span>
       </div>
@@ -753,6 +840,18 @@
       }
     });
   }
+
+  /* Announcement bar — fade-cycle messages */
+  (function() {
+    const msgs = document.querySelectorAll('.announce-msg');
+    let current = 0;
+    if (msgs.length < 2) return;
+    setInterval(() => {
+      msgs[current].classList.remove('active');
+      current = (current + 1) % msgs.length;
+      msgs[current].classList.add('active');
+    }, 3000);
+  })();
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

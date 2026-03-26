@@ -27,11 +27,8 @@
     }
     .custom-hero h1 { color: var(--brown-dark); margin-bottom: 20px; }
     .custom-hero h1 em {
-      background: linear-gradient(90deg, var(--terracotta), #C8973A, var(--terracotta));
-      background-size: 300% auto;
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradient-shift 4s ease infinite;
+      color: var(--terracotta);
+      font-style: italic;
     }
     .custom-hero p { color: var(--text-mid); font-size: 1rem; margin-bottom: 28px; line-height: 1.7; }
     .custom-hero-art {
@@ -72,12 +69,12 @@
       color: var(--terracotta);
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 20px;
-      box-shadow: 0 0 0 8px rgba(196,113,79,.08);
+      box-shadow: 0 0 0 8px rgba(224,112,144,.08);
       transition: all 0.4s ease;
     }
     .how-step:hover .how-step-num {
       background: var(--terracotta); color: white;
-      box-shadow: 0 0 0 12px rgba(196,113,79,.12), 0 8px 24px rgba(196,113,79,.3);
+      box-shadow: 0 0 0 12px rgba(224,112,144,.12), 0 8px 24px rgba(196,113,79,.3);
       transform: scale(1.1);
     }
     .how-step h4 { font-family: var(--font-serif); color: var(--brown-dark); margin-bottom: 8px; }
@@ -507,27 +504,27 @@
             <label class="form-label" style="margin-bottom:8px; display:block;">Fabric Preference</label>
             <div class="fabric-chips" id="fabricChips">
               <button type="button" class="fabric-chip" onclick="selectFabric(this)">
-                <div class="swatch" style="background:repeating-linear-gradient(0deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0) 8px,rgba(180,200,220,.4) 8px,rgba(180,200,220,.4) 10px),linear-gradient(135deg,#C8DCF0,#A8C4E4);"></div>
+                <div class="swatch" style="background:repeating-linear-gradient(90deg,rgba(224,112,144,.08) 0px,rgba(224,112,144,.08) 1px,transparent 1px,transparent 14px),linear-gradient(160deg,#FFF0F4,#FDD8E4);"></div>
                 Seersucker
               </button>
               <button type="button" class="fabric-chip" onclick="selectFabric(this)">
-                <div class="swatch" style="background:linear-gradient(135deg,#F0E8D0,#DDD0B4);"></div>
+                <div class="swatch" style="background:linear-gradient(135deg,#FFF0E0,#FDE0CC);"></div>
                 Linen
               </button>
               <button type="button" class="fabric-chip" onclick="selectFabric(this)">
-                <div class="swatch" style="background:linear-gradient(135deg,#E8EAD8,#D4D8B8);"></div>
+                <div class="swatch" style="background:linear-gradient(135deg,#FDE8D0,#F9D0C0);"></div>
                 Organic Cotton
               </button>
               <button type="button" class="fabric-chip" onclick="selectFabric(this)">
-                <div class="swatch" style="background:linear-gradient(135deg,#2A2A2A,#1A1A1A);"></div>
+                <div class="swatch" style="background:linear-gradient(135deg,#3C1828,#280A18);"></div>
                 Black Cotton
               </button>
               <button type="button" class="fabric-chip" onclick="selectFabric(this)">
-                <div class="swatch" style="background:linear-gradient(135deg,#2A3C5A,#1A2C4A);"></div>
-                Navy Cotton
+                <div class="swatch" style="background:linear-gradient(135deg,#5A1E38,#3C1025);"></div>
+                Deep Rose
               </button>
               <button type="button" class="fabric-chip" onclick="selectFabric(this)">
-                <div class="swatch" style="background: conic-gradient(#C4714F,#F5C842,#6B9060,#C4714F);"></div>
+                <div class="swatch" style="background: conic-gradient(#E07090,#E8906A,#7AAAA0,#E07090);"></div>
                 Surprise Me
               </button>
             </div>

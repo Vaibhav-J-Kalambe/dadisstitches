@@ -25,11 +25,8 @@
     .story-hero-content { position: relative; z-index: 1; }
     .story-hero h1 { color: var(--brown-dark); margin-bottom: 20px; }
     .story-hero h1 em {
-      background: linear-gradient(90deg, var(--terracotta), #C8973A, var(--terracotta));
-      background-size: 300% auto;
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradient-shift 4s ease infinite;
+      color: var(--terracotta);
+      font-style: italic;
     }
     .story-hero p { color: var(--text-mid); font-size: 1.05rem; max-width: 580px; margin: 0 auto 36px; line-height: 1.7; }
 
@@ -118,7 +115,7 @@
       z-index: 1;
     }
     .timeline-item.visible .timeline-dot {
-      box-shadow: 0 0 0 10px rgba(196,113,79,.12);
+      box-shadow: 0 0 0 10px rgba(224,112,144,.12);
       border-color: var(--gold);
       color: var(--gold);
     }
@@ -377,7 +374,7 @@
           <path d="M124 282 Q141 287 159 282" stroke="#6B9060" stroke-width="1.5" fill="none" opacity="0.55" stroke-linecap="round"/>
           <!-- Needle -->
           <line x1="201" y1="254" x2="186" y2="270" stroke="#8B6A50" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
-          <circle cx="202" cy="253" r="2.5" fill="#C8973A" opacity="0.65"/>
+          <circle cx="202" cy="253" r="2.5" fill="#C4714F" opacity="0.65"/>
           <!-- Thread -->
           <path d="M202 255 Q208 248 213 252" stroke="#C4714F" stroke-width="1" fill="none" opacity="0.45" stroke-dasharray="2 1.5"/>
         </svg>
@@ -521,7 +518,7 @@
             <path d="M32 50 Q34 36 50 34 Q66 36 68 50 Q65 40 50 38 Q35 40 32 50Z" fill="#C8C0B8" opacity="0.75"/>
             <circle cx="50" cy="38" r="10" fill="#C0B8B0" opacity="0.6"/>
             <!-- Daisy embroidery -->
-            <circle cx="50" cy="100" r="4" fill="#EDD9A3" opacity="0.9"/>
+            <circle cx="50" cy="100" r="4" fill="#C4714F" opacity="0.9"/>
             <ellipse cx="50" cy="88" rx="3.5" ry="6" fill="white" opacity="0.9" transform="rotate(0 50 100)"/>
             <ellipse cx="50" cy="88" rx="3.5" ry="6" fill="white" opacity="0.9" transform="rotate(45 50 100)"/>
             <ellipse cx="50" cy="88" rx="3.5" ry="6" fill="white" opacity="0.9" transform="rotate(90 50 100)"/>
@@ -551,7 +548,7 @@
             <ellipse cx="44" cy="80" rx="2.5" ry="4" fill="#E8908A" transform="rotate(0 44 87)"/>
             <ellipse cx="44" cy="80" rx="2.5" ry="4" fill="#E8908A" transform="rotate(90 44 87)"/>
             <ellipse cx="44" cy="80" rx="2.5" ry="4" fill="#E8908A" transform="rotate(180 44 87)"/>
-            <circle cx="56" cy="84" r="4.5" fill="#EDD9A3"/>
+            <circle cx="56" cy="84" r="4.5" fill="#C4714F"/>
           </svg>
         </div>
         <div class="dadi-card-body">
@@ -748,7 +745,7 @@
 
   // Floating petals
   const petalContainer = document.getElementById('petals');
-  const colors = ['#F5C842','#C4714F','#C4928A','#6B9060','#EDD9A3'];
+  const colors = ['#F5C842','#C4714F','#C4928A','#6B9060','#C4714F'];
   for (let i = 0; i < 15; i++) {
     const p = document.createElement('div');
     p.className = 'petal';
