@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dadi's Stitches — Hand-Embroidered Apparel, Stitched with Love</title>
+  <meta name="description" content="Premium hand-embroidered shirts made by skilled grandmothers (Dadis) from the heart of India. Every stitch is a story. A social enterprise from Mumbai." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Hero shirt art */
+    .hero-visual-inner {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, #EEE8DF 0%, #DDD4C5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-visual-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 40% 30%, rgba(196,113,79,.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(91,122,82,.06) 0%, transparent 50%);
+    }
+
+    /* shirt art backgrounds for product cards */
+    .bg-seersucker {
+      background: repeating-linear-gradient(
+        0deg, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 8px,
+        rgba(180,200,220,.3) 8px, rgba(180,200,220,.3) 10px
+      ), linear-gradient(135deg, #C8DCF0 0%, #A8C4E4 100%);
+    }
+    .bg-organic { background: linear-gradient(135deg, #E8EAD8 0%, #D4D8B8 100%); }
+    .bg-linen { background: linear-gradient(135deg, #F0E8D0 0%, #DDD0B4 100%); }
+    .bg-navy { background: linear-gradient(135deg, #2A3C5A 0%, #1A2C4A 100%); }
+    .bg-black { background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%); }
+    .bg-green { background: linear-gradient(135deg, #4A6A44 0%, #3A5A34 100%); }
+    .bg-custom { background: linear-gradient(135deg, #E8D4B8 0%, #D4BC98 100%); }
+
+    /* Embroidery SVG colours on cards */
+    .emb-white { color: #FFF8F0; }
+    .emb-multi { color: var(--terracotta); }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <span>✦ Free shipping on orders over ₹2,500</span>
+  <span>·</span>
+  <span>Each stitch takes 4 hours of love &amp; skill</span>
+  <span>·</span>
+  <span>Made by India's grandmothers ✦</span>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="14" r="13" stroke="#C4714F" stroke-width="1.5" fill="none"/>
+        <path d="M8 14 Q11 8, 14 14 Q17 20, 20 14" stroke="#C4714F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <circle cx="8" cy="14" r="1.5" fill="#C4714F"/>
+        <path d="M8 10 L8 6 L10 6" stroke="#6B4226" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Dadi's Stitches
+    </a>
+    <div class="nav-links">
+      <a href="shop.html">Shop</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="custom-order.html">Custom Orders</a>
+      <a href="index.html#process">How It's Made</a>
+    </div>
+    <div class="nav-actions">
+      <a href="shop.html" class="nav-cta">Shop Now</a>
+      <button class="nav-cart" onclick="alert('Cart coming soon!')" aria-label="Cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-badge">0</span>
+      </button>
+      <button class="nav-hamburger" onclick="openMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-head">
+    <span class="nav-logo" style="font-size:1.2rem;">Dadi's Stitches</span>
+    <button class="mobile-close" onclick="closeMenu()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu-links">
+    <a href="shop.html" onclick="closeMenu()">Shop</a>
+    <a href="our-story.html" onclick="closeMenu()">Our Story</a>
+    <a href="custom-order.html" onclick="closeMenu()">Custom Orders</a>
+    <a href="index.html#process" onclick="closeMenu()">How It's Made</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="section-label">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><circle cx="7" cy="7" r="3"/></svg>
+      A Social Enterprise from Mumbai
+    </div>
+    <h1 class="hero-title">
+      Four hours.<br/>
+      One Dadi.<br/>
+      <em>A story stitched just for you.</em>
+    </h1>
+    <p class="hero-subtitle">
+      Premium hand-embroidered shirts made with patience, skill, and love by India's most talented grandmothers. Not mass-produced. Mass-loved.
+    </p>
+    <div class="hero-actions">
+      <a href="shop.html" class="btn btn-primary btn-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Shop the Collection
+      </a>
+      <a href="our-story.html" class="btn btn-ghost">Meet Our Dadis</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <strong>12+</strong>
+        <span>Dadis Employed</span>
+      </div>
+      <div class="hero-trust-divider"></div>
+      <div class="hero-trust-item">
+        <strong>340+</strong>
+        <span>Shirts Stitched</span>
+      </div>
+      <div class="hero-trust-divider"></div>
+      <div class="hero-trust-item">
+        <strong>4 hrs</strong>
+        <span>Per Shirt, Always</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <!-- Hero shirt SVG art -->
+      <svg width="360" height="460" viewBox="0 0 360 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Shirt body -->
+        <path d="M80 80 L40 140 L80 155 L80 400 L280 400 L280 155 L320 140 L280 80 L240 100 Q180 115 120 100 Z" fill="white" stroke="#E8DDD0" stroke-width="1.5"/>
+        <!-- Collar -->
+        <path d="M155 80 Q180 110 205 80" fill="none" stroke="#D4C8B8" stroke-width="1.5"/>
+        <!-- Shoulder seams -->
+        <path d="M120 100 L80 80" stroke="#E0D4C4" stroke-width="1"/>
+        <path d="M240 100 L280 80" stroke="#E0D4C4" stroke-width="1"/>
+        <!-- Embroidery: Sunflowers -->
+        <!-- Center flower -->
+        <circle cx="180" cy="220" r="12" fill="#F0B030" stroke="#C89020" stroke-width="1"/>
+        <circle cx="180" cy="220" r="6" fill="#8B5A10"/>
+        <!-- Petals -->
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(0 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(30 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(60 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(90 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(120 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(150 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(180 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(210 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(240 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(270 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(300 180 220)"/>
+        <ellipse cx="180" cy="203" rx="4" ry="7" fill="#F5C842" transform="rotate(330 180 220)"/>
+        <!-- Stem -->
+        <path d="M180 232 Q175 255 170 275" stroke="#5B7A52" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <!-- Leaves -->
+        <path d="M175 250 Q162 242 160 252 Q167 255 175 250Z" fill="#6B9060"/>
+        <path d="M172 262 Q185 255 184 265 Q178 267 172 262Z" fill="#6B9060"/>
+        <!-- Smaller side flowers -->
+        <circle cx="135" cy="250" r="8" fill="#F0B030" stroke="#C89020" stroke-width="1"/>
+        <circle cx="135" cy="250" r="4" fill="#8B5A10"/>
+        <ellipse cx="135" cy="240" rx="3" ry="5" fill="#F5C842" transform="rotate(0 135 250)"/>
+        <ellipse cx="135" cy="240" rx="3" ry="5" fill="#F5C842" transform="rotate(45 135 250)"/>
+        <ellipse cx="135" cy="240" rx="3" ry="5" fill="#F5C842" transform="rotate(90 135 250)"/>
+        <ellipse cx="135" cy="240" rx="3" ry="5" fill="#F5C842" transform="rotate(135 135 250)"/>
+        <ellipse cx="135" cy="240" rx="3" ry="5" fill="#F5C842" transform="rotate(180 135 250)"/>
+        <ellipse cx="135" cy="240" rx="3" ry="5" fill="#F5C842" transform="rotate(225 135 250)"/>
+        <ellipse cx="135" cy="240" rx="3" ry="5" fill="#F5C842" transform="rotate(270 135 250)"/>
+        <ellipse cx="135" cy="240" rx="3" ry="5" fill="#F5C842" transform="rotate(315 135 250)"/>
+        <path d="M135 258 Q130 270 128 280" stroke="#5B7A52" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <circle cx="225" cy="245" r="8" fill="#F0B030" stroke="#C89020" stroke-width="1"/>
+        <circle cx="225" cy="245" r="4" fill="#8B5A10"/>
+        <ellipse cx="225" cy="235" rx="3" ry="5" fill="#F5C842" transform="rotate(0 225 245)"/>
+        <ellipse cx="225" cy="235" rx="3" ry="5" fill="#F5C842" transform="rotate(45 225 245)"/>
+        <ellipse cx="225" cy="235" rx="3" ry="5" fill="#F5C842" transform="rotate(90 225 245)"/>
+        <ellipse cx="225" cy="235" rx="3" ry="5" fill="#F5C842" transform="rotate(135 225 245)"/>
+        <ellipse cx="225" cy="235" rx="3" ry="5" fill="#F5C842" transform="rotate(180 225 245)"/>
+        <ellipse cx="225" cy="235" rx="3" ry="5" fill="#F5C842" transform="rotate(225 225 245)"/>
+        <ellipse cx="225" cy="235" rx="3" ry="5" fill="#F5C842" transform="rotate(270 225 245)"/>
+        <ellipse cx="225" cy="235" rx="3" ry="5" fill="#F5C842" transform="rotate(315 225 245)"/>
+        <path d="M225 253 Q228 265 226 278" stroke="#5B7A52" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <!-- Tiny stars/dots -->
+        <circle cx="155" cy="195" r="2" fill="#C4928A"/>
+        <circle cx="207" cy="192" r="2" fill="#C4928A"/>
+        <circle cx="148" cy="280" r="1.5" fill="#A8C49E"/>
+        <circle cx="215" cy="285" r="1.5" fill="#A8C49E"/>
+        <!-- Thread detail at collar -->
+        <path d="M150 95 Q165 108 180 95 Q195 108 210 95" stroke="#C4928A" stroke-width="1" fill="none" stroke-dasharray="2 2"/>
+      </svg>
+
+      <!-- Decorative elements -->
+      <div style="position:absolute; bottom:40px; left:40px; right:40px; text-align:center;">
+        <p style="font-family:'Dancing Script',cursive; font-size:1.1rem; color:#6B4226; opacity:0.7;">"Stitched with patience &amp; pride"</p>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="hero-scroll" style="left:50%;bottom:24px;position:absolute;">
+      <span>Scroll</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- EMOTION BANNER -->
+<div class="emotion-banner reveal">
+  <div class="thread-divider">
+    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 0 20 4 Q30 8 40 4" stroke="#EDD9A3" stroke-width="1.5" fill="none"/></svg>
+    <svg width="8" height="8" viewBox="0 0 8 8" fill="#EDD9A3"><circle cx="4" cy="4" r="2"/></svg>
+    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 8 20 4 Q30 0 40 4" stroke="#EDD9A3" stroke-width="1.5" fill="none"/></svg>
+  </div>
+  <p class="emotion-banner-quote">
+    "You're not buying a shirt.<br/>You're wearing someone's story."
+  </p>
+  <p class="emotion-banner-sub">— The Dadi's Stitches Promise</p>
+  <div class="thread-divider">
+    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 0 20 4 Q30 8 40 4" stroke="#EDD9A3" stroke-width="1.5" fill="none"/></svg>
+    <svg width="8" height="8" viewBox="0 0 8 8" fill="#EDD9A3"><circle cx="4" cy="4" r="2"/></svg>
+    <svg width="40" height="8" viewBox="0 0 40 8" fill="none"><path d="M0 4 Q10 8 20 4 Q30 0 40 4" stroke="#EDD9A3" stroke-width="1.5" fill="none"/></svg>
+  </div>
+</div>
+
+<!-- PRODUCTS SECTION -->
+<section class="section products-section" id="collection">
+  <div class="container">
+    <div class="products-header reveal">
+      <div class="products-header-text">
+        <div class="section-label">The Collection</div>
+        <h2>Made by hands that have loved<br/><em>for decades</em></h2>
+      </div>
+      <a href="shop.html" class="view-all-link">
+        View All Shirts
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <div class="grid-3">
+
+      <!-- Product 1 -->
+      <div class="product-card reveal reveal-delay-1">
+        <a href="product.html">
+          <div class="product-card-image">
+            <div class="product-shirt-art bg-seersucker">
+              <svg width="160" height="180" viewBox="0 0 160 180" fill="none">
+                <path d="M35 35 L15 65 L35 72 L35 175 L125 175 L125 72 L145 65 L125 35 L105 45 Q80 53 55 45 Z" fill="rgba(255,255,255,0.85)" stroke="#D4C4B0" stroke-width="1"/>
+                <circle cx="80" cy="105" r="20" fill="#F5C842" stroke="#C89020" stroke-width="1.2"/>
+                <circle cx="80" cy="105" r="9" fill="#7A4A10"/>
+                <ellipse cx="80" cy="82" rx="5" ry="9" fill="#F5C842" transform="rotate(0 80 105)"/>
+                <ellipse cx="80" cy="82" rx="5" ry="9" fill="#F5C842" transform="rotate(40 80 105)"/>
+                <ellipse cx="80" cy="82" rx="5" ry="9" fill="#F5C842" transform="rotate(80 80 105)"/>
+                <ellipse cx="80" cy="82" rx="5" ry="9" fill="#F5C842" transform="rotate(120 80 105)"/>
+                <ellipse cx="80" cy="82" rx="5" ry="9" fill="#F5C842" transform="rotate(160 80 105)"/>
+                <ellipse cx="80" cy="82" rx="5" ry="9" fill="#F5C842" transform="rotate(200 80 105)"/>
+                <ellipse cx="80" cy="82" rx="5" ry="9" fill="#F5C842" transform="rotate(240 80 105)"/>
+                <ellipse cx="80" cy="82" rx="5" ry="9" fill="#F5C842" transform="rotate(280 80 105)"/>
+                <ellipse cx="80" cy="82" rx="5" ry="9" fill="#F5C842" transform="rotate(320 80 105)"/>
+                <path d="M80 125 Q76 140 74 155" stroke="#5B7A52" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <path d="M77 138 Q68 132 66 140 Q72 142 77 138Z" fill="#6B9060"/>
+                <circle cx="55" cy="80" r="4" fill="#F5C842"/>
+                <circle cx="105" cy="82" r="4" fill="#F5C842"/>
+                <circle cx="55" cy="80" r="2" fill="#7A4A10"/>
+                <circle cx="105" cy="82" r="2" fill="#7A4A10"/>
+              </svg>
+            </div>
+            <span class="badge-handmade">Handmade</span>
+            <button class="product-card-wishlist" onclick="event.preventDefault(); this.style.color='#C4928A'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-dadi-credit">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="currentColor"><circle cx="5.5" cy="5.5" r="5.5"/></svg>
+              Stitched by Savitri Dadi · 42 years experience
+            </div>
+            <div class="product-name">The Sunflower Fields Shirt</div>
+            <div class="product-fabric">Seersucker · S, M, L, XL</div>
+            <div class="product-card-footer">
+              <div class="product-price">₹899</div>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card reveal reveal-delay-2">
+        <a href="product.html">
+          <div class="product-card-image">
+            <div class="product-shirt-art bg-navy">
+              <svg width="160" height="180" viewBox="0 0 160 180" fill="none">
+                <path d="M35 35 L15 65 L35 72 L35 175 L125 175 L125 72 L145 65 L125 35 L105 45 Q80 53 55 45 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                <!-- Shoulder floral embroidery -->
+                <path d="M30 55 Q45 45 60 52 Q75 58 85 50" stroke="#A8C49E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle cx="35" cy="56" r="4" fill="white" opacity="0.9"/>
+                <circle cx="35" cy="56" r="2" fill="#F5C842"/>
+                <circle cx="50" cy="48" r="3.5" fill="white" opacity="0.9"/>
+                <circle cx="50" cy="48" r="1.8" fill="#F0B8D0"/>
+                <circle cx="65" cy="52" r="4" fill="white" opacity="0.9"/>
+                <circle cx="65" cy="52" r="2" fill="#F5C842"/>
+                <circle cx="80" cy="49" r="3" fill="white" opacity="0.9"/>
+                <circle cx="80" cy="49" r="1.5" fill="#F0B8D0"/>
+                <!-- Leaves -->
+                <path d="M42 53 Q44 44 50 46 Q47 50 42 53Z" fill="#6B9060" opacity="0.8"/>
+                <path d="M58 50 Q62 42 67 45 Q64 49 58 50Z" fill="#6B9060" opacity="0.8"/>
+              </svg>
+            </div>
+            <span class="badge-handmade">Handmade</span>
+            <button class="product-card-wishlist" onclick="event.preventDefault(); this.style.color='#C4928A'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-dadi-credit">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="currentColor"><circle cx="5.5" cy="5.5" r="5.5"/></svg>
+              Stitched by Kamla Dadi · 35 years experience
+            </div>
+            <div class="product-name">Wildflower Garden Tee</div>
+            <div class="product-fabric">Organic Cotton · S, M, L, XL</div>
+            <div class="product-card-footer">
+              <div class="product-price">₹849</div>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card reveal reveal-delay-3">
+        <a href="product.html">
+          <div class="product-card-image">
+            <div class="product-shirt-art bg-green">
+              <svg width="160" height="180" viewBox="0 0 160 180" fill="none">
+                <path d="M35 35 L15 65 L35 72 L35 175 L125 175 L125 72 L145 65 L125 35 L105 45 Q80 53 55 45 Z" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                <!-- Daisy cluster -->
+                <circle cx="80" cy="108" r="5" fill="#EDD9A3"/>
+                <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(0 80 108)"/>
+                <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(30 80 108)"/>
+                <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(60 80 108)"/>
+                <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(90 80 108)"/>
+                <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(120 80 108)"/>
+                <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(150 80 108)"/>
+                <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(180 80 108)"/>
+                <ellipse cx="80" cy="95" rx="4" ry="7" fill="white" opacity="0.9" transform="rotate(210 80 108)"/>
+                <path d="M80 121 Q78 135 76 148" stroke="#A8C49E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle cx="57" cy="125" r="4" fill="#EDD9A3"/>
+                <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(0 57 125)"/>
+                <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(60 57 125)"/>
+                <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(120 57 125)"/>
+                <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(180 57 125)"/>
+                <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(240 57 125)"/>
+                <ellipse cx="57" cy="116" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(300 57 125)"/>
+                <circle cx="103" cy="122" r="4" fill="#EDD9A3"/>
+                <ellipse cx="103" cy="113" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(0 103 122)"/>
+                <ellipse cx="103" cy="113" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(60 103 122)"/>
+                <ellipse cx="103" cy="113" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(120 103 122)"/>
+                <ellipse cx="103" cy="113" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(180 103 122)"/>
+                <ellipse cx="103" cy="113" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(240 103 122)"/>
+                <ellipse cx="103" cy="113" rx="3" ry="5.5" fill="white" opacity="0.85" transform="rotate(300 103 122)"/>
+              </svg>
+            </div>
+            <span class="badge-handmade">Handmade</span>
+            <button class="product-card-wishlist" onclick="event.preventDefault(); this.style.color='#C4928A'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-dadi-credit">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="currentColor"><circle cx="5.5" cy="5.5" r="5.5"/></svg>
+              Stitched by Radha Dadi · 28 years experience
+            </div>
+            <div class="product-name">Daisy Dreams</div>
+            <div class="product-fabric">Linen Shirt · S, M, L, XL</div>
+            <div class="product-card-footer">
+              <div class="product-price">₹949</div>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card reveal reveal-delay-1">
+        <a href="product.html">
+          <div class="product-card-image">
+            <div class="product-shirt-art bg-black">
+              <svg width="160" height="180" viewBox="0 0 160 180" fill="none">
+                <path d="M35 35 L15 65 L35 72 L35 175 L125 175 L125 72 L145 65 L125 35 L105 45 Q80 53 55 45 Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <!-- Vase with flowers -->
+                <path d="M70 150 L68 125 Q68 118 80 118 Q92 118 92 125 L90 150 Z" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+                <path d="M65 150 L95 150" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Flowers in vase -->
+                <path d="M80 118 Q75 98 68 85" stroke="#C4928A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle cx="68" cy="82" r="6" fill="#C4714F"/>
+                <ellipse cx="68" cy="73" rx="3" ry="5" fill="#E8908A" transform="rotate(0 68 82)"/>
+                <ellipse cx="68" cy="73" rx="3" ry="5" fill="#E8908A" transform="rotate(60 68 82)"/>
+                <ellipse cx="68" cy="73" rx="3" ry="5" fill="#E8908A" transform="rotate(120 68 82)"/>
+                <ellipse cx="68" cy="73" rx="3" ry="5" fill="#E8908A" transform="rotate(180 68 82)"/>
+                <ellipse cx="68" cy="73" rx="3" ry="5" fill="#E8908A" transform="rotate(240 68 82)"/>
+                <ellipse cx="68" cy="73" rx="3" ry="5" fill="#E8908A" transform="rotate(300 68 82)"/>
+                <path d="M80 118 Q82 98 88 86" stroke="#6B9060" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle cx="88" cy="83" r="5" fill="#C4714F"/>
+                <ellipse cx="88" cy="75" rx="3" ry="5" fill="#F0A898" transform="rotate(0 88 83)"/>
+                <ellipse cx="88" cy="75" rx="3" ry="5" fill="#F0A898" transform="rotate(72 88 83)"/>
+                <ellipse cx="88" cy="75" rx="3" ry="5" fill="#F0A898" transform="rotate(144 88 83)"/>
+                <ellipse cx="88" cy="75" rx="3" ry="5" fill="#F0A898" transform="rotate(216 88 83)"/>
+                <ellipse cx="88" cy="75" rx="3" ry="5" fill="#F0A898" transform="rotate(288 88 83)"/>
+                <path d="M80 118 Q80 100 80 88" stroke="#A8C49E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle cx="80" cy="85" r="5" fill="#EDD9A3"/>
+                <ellipse cx="80" cy="77" rx="2.5" ry="4.5" fill="rgba(255,255,255,0.9)" transform="rotate(0 80 85)"/>
+                <ellipse cx="80" cy="77" rx="2.5" ry="4.5" fill="rgba(255,255,255,0.9)" transform="rotate(60 80 85)"/>
+                <ellipse cx="80" cy="77" rx="2.5" ry="4.5" fill="rgba(255,255,255,0.9)" transform="rotate(120 80 85)"/>
+                <ellipse cx="80" cy="77" rx="2.5" ry="4.5" fill="rgba(255,255,255,0.9)" transform="rotate(180 80 85)"/>
+                <ellipse cx="80" cy="77" rx="2.5" ry="4.5" fill="rgba(255,255,255,0.9)" transform="rotate(240 80 85)"/>
+                <ellipse cx="80" cy="77" rx="2.5" ry="4.5" fill="rgba(255,255,255,0.9)" transform="rotate(300 80 85)"/>
+                <path d="M70 108 Q62 103 60 110 Q66 112 70 108Z" fill="#6B9060" opacity="0.7"/>
+                <path d="M92 108 Q100 104 101 111 Q96 112 92 108Z" fill="#6B9060" opacity="0.7"/>
+              </svg>
+            </div>
+            <span class="badge-handmade">Handmade</span>
+            <button class="product-card-wishlist" onclick="event.preventDefault(); this.style.color='#C4928A'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-dadi-credit">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="currentColor"><circle cx="5.5" cy="5.5" r="5.5"/></svg>
+              Stitched by Meera Dadi · 50 years experience
+            </div>
+            <div class="product-name">Botanical Vines Tee</div>
+            <div class="product-fabric">100% Cotton · S, M, L, XL</div>
+            <div class="product-card-footer">
+              <div class="product-price">₹849</div>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card reveal reveal-delay-2">
+        <a href="product.html">
+          <div class="product-card-image">
+            <div class="product-shirt-art bg-linen">
+              <svg width="160" height="180" viewBox="0 0 160 180" fill="none">
+                <path d="M35 35 L15 65 L35 72 L35 175 L125 175 L125 72 L145 65 L125 35 L105 45 Q80 53 55 45 Z" fill="rgba(255,255,255,0.6)" stroke="#D4C4B0" stroke-width="1"/>
+                <!-- Collar border embroidery -->
+                <path d="M60 52 Q80 68 100 52" stroke="#C4714F" stroke-width="1.5" fill="none"/>
+                <path d="M60 52 Q80 68 100 52" stroke="none" fill="none"/>
+                <!-- Tiny roses along collar -->
+                <circle cx="65" cy="56" r="3" fill="#C4714F"/>
+                <circle cx="72" cy="62" r="3.5" fill="#E8908A"/>
+                <circle cx="80" cy="65" r="3" fill="#C4714F"/>
+                <circle cx="88" cy="62" r="3.5" fill="#E8908A"/>
+                <circle cx="95" cy="56" r="3" fill="#C4714F"/>
+                <!-- Leaves -->
+                <path d="M68 60 Q65 54 69 54 Q70 58 68 60Z" fill="#6B9060"/>
+                <path d="M83 63 Q80 57 84 57 Q85 61 83 63Z" fill="#6B9060"/>
+                <!-- Center mono design: poppy -->
+                <circle cx="80" cy="115" r="15" fill="#C4714F" opacity="0.9"/>
+                <circle cx="80" cy="115" r="7" fill="#7A2010"/>
+                <circle cx="80" cy="115" r="3" fill="#C89020"/>
+                <path d="M80 100 Q76 92 80 88 Q84 92 80 100Z" fill="#C4714F"/>
+                <path d="M80 130 Q76 138 80 142 Q84 138 80 130Z" fill="#C4714F"/>
+                <path d="M65 115 Q57 111 53 115 Q57 119 65 115Z" fill="#C4714F"/>
+                <path d="M95 115 Q103 111 107 115 Q103 119 95 115Z" fill="#C4714F"/>
+                <path d="M69 104 Q63 98 65 94 Q70 97 69 104Z" fill="#C4714F"/>
+                <path d="M91 104 Q97 98 95 94 Q90 97 91 104Z" fill="#C4714F"/>
+                <path d="M69 126 Q63 132 65 136 Q70 133 69 126Z" fill="#C4714F"/>
+                <path d="M91 126 Q97 132 95 136 Q90 133 91 126Z" fill="#C4714F"/>
+              </svg>
+            </div>
+            <span class="badge-handmade">Handmade</span>
+            <button class="product-card-wishlist" onclick="event.preventDefault(); this.style.color='#C4928A'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-dadi-credit">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="currentColor"><circle cx="5.5" cy="5.5" r="5.5"/></svg>
+              Stitched by Shanti Dadi · 38 years experience
+            </div>
+            <div class="product-name">Himalayan Poppies Shirt</div>
+            <div class="product-fabric">Seersucker · S, M, L, XL</div>
+            <div class="product-card-footer">
+              <div class="product-price">₹899</div>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Product 6: Custom -->
+      <div class="product-card reveal reveal-delay-3">
+        <a href="custom-order.html">
+          <div class="product-card-image">
+            <div class="product-shirt-art bg-custom" style="flex-direction:column; gap:16px;">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="31" stroke="#C4714F" stroke-width="1.5" stroke-dasharray="6 4"/>
+                <path d="M32 20 L32 44 M20 32 L44 32" stroke="#C4714F" stroke-width="2" stroke-linecap="round"/>
+                <path d="M24 24 Q32 16 40 24 Q48 32 40 40 Q32 48 24 40 Q16 32 24 24Z" fill="none" stroke="#C4714F" stroke-width="1" opacity="0.4"/>
+              </svg>
+              <span style="font-family:'Dancing Script',cursive; font-size:1.1rem; color:#6B4226; text-align:center; line-height:1.3;">Your design,<br/>their hands</span>
+            </div>
+            <span class="badge-handmade badge-custom">Bespoke</span>
+          </div>
+          <div class="product-card-body">
+            <div class="product-dadi-credit">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="currentColor"><circle cx="5.5" cy="5.5" r="5.5"/></svg>
+              Matched to the perfect Dadi for your vision
+            </div>
+            <div class="product-name">Custom / Bespoke Order</div>
+            <div class="product-fabric">Any fabric · Any design · Any size</div>
+            <div class="product-card-footer">
+              <div class="product-price">From ₹800 <span class="product-price-original">+ Dadi hours</span></div>
+              <a href="custom-order.html" class="btn-add-cart">Design It</a>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <div class="text-center mt-32 reveal">
+      <a href="shop.html" class="btn btn-ghost btn-lg">See All 20+ Designs</a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="section story-section" id="story">
+  <div class="container">
+    <div class="grid-2">
+      <div class="story-image-wrap reveal-left">
+        <div style="width:100%; height:100%; min-height:520px; background:linear-gradient(145deg, #EEE8DF 0%, #DDD4C5 60%, #C8B8A0 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+          <!-- Grandmother illustration SVG -->
+          <svg width="300" height="380" viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Chair -->
+            <rect x="60" y="280" width="180" height="10" rx="5" fill="#A0714F" opacity="0.4"/>
+            <rect x="80" y="290" width="12" height="80" rx="6" fill="#A0714F" opacity="0.35"/>
+            <rect x="208" y="290" width="12" height="80" rx="6" fill="#A0714F" opacity="0.35"/>
+            <!-- Body / dress -->
+            <ellipse cx="150" cy="310" rx="70" ry="50" fill="#C4928A" opacity="0.35"/>
+            <path d="M110 260 Q110 310 90 360 L210 360 Q190 310 190 260 Z" fill="#C4928A" opacity="0.3"/>
+            <!-- Torso -->
+            <rect x="118" y="210" width="64" height="60" rx="20" fill="#E8C4A0" opacity="0.7"/>
+            <!-- Neck -->
+            <rect x="142" y="195" width="16" height="20" rx="8" fill="#E8C4A0" opacity="0.7"/>
+            <!-- Head -->
+            <ellipse cx="150" cy="175" rx="32" ry="35" fill="#E8C4A0" opacity="0.8"/>
+            <!-- Hair (grey) -->
+            <path d="M120 168 Q125 145 150 142 Q175 145 180 168 Q175 155 150 153 Q125 155 120 168Z" fill="#C8C0B8" opacity="0.8"/>
+            <!-- Bun -->
+            <circle cx="150" cy="148" r="14" fill="#C0B8B0" opacity="0.7"/>
+            <!-- Face hints -->
+            <circle cx="140" cy="175" r="3" fill="#C4928A" opacity="0.5"/>
+            <circle cx="160" cy="175" r="3" fill="#C4928A" opacity="0.5"/>
+            <path d="M143 185 Q150 190 157 185" stroke="#C4928A" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+            <!-- Glasses -->
+            <circle cx="141" cy="174" r="7" fill="none" stroke="#8B6A50" stroke-width="1.5" opacity="0.5"/>
+            <circle cx="160" cy="174" r="7" fill="none" stroke="#8B6A50" stroke-width="1.5" opacity="0.5"/>
+            <line x1="148" y1="174" x2="153" y2="174" stroke="#8B6A50" stroke-width="1.5" opacity="0.5"/>
+            <line x1="133" y1="174" x2="128" y2="172" stroke="#8B6A50" stroke-width="1.5" opacity="0.5"/>
+            <line x1="167" y1="174" x2="172" y2="172" stroke="#8B6A50" stroke-width="1.5" opacity="0.5"/>
+            <!-- Arms -->
+            <path d="M118 225 Q90 240 85 265" stroke="#E8C4A0" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.7"/>
+            <path d="M182 225 Q210 240 215 265" stroke="#E8C4A0" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.7"/>
+            <!-- Hands -->
+            <ellipse cx="84" cy="270" rx="10" ry="8" fill="#E8C4A0" opacity="0.7"/>
+            <ellipse cx="216" cy="270" rx="10" ry="8" fill="#E8C4A0" opacity="0.7"/>
+            <!-- Embroidery in lap -->
+            <ellipse cx="150" cy="285" rx="50" ry="25" fill="white" opacity="0.6"/>
+            <!-- Thread work on fabric in lap -->
+            <circle cx="140" cy="283" r="6" fill="#F5C842" opacity="0.7"/>
+            <circle cx="155" cy="280" r="5" fill="#C4714F" opacity="0.6"/>
+            <circle cx="165" cy="286" r="6" fill="#F5C842" opacity="0.7"/>
+            <path d="M135 292 Q150 296 168 292" stroke="#6B9060" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+            <!-- Needle in right hand -->
+            <line x1="214" y1="264" x2="198" y2="280" stroke="#8B6A50" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+            <circle cx="215" cy="263" r="3" fill="#C8973A" opacity="0.7"/>
+            <!-- Thread -->
+            <path d="M215 265 Q220 258 225 262" stroke="#C4714F" stroke-width="1" fill="none" opacity="0.5" stroke-dasharray="2 1"/>
+          </svg>
+          <div style="position:absolute; bottom:24px; left:0; right:0; text-align:center;">
+            <p style="font-family:'Dancing Script',cursive; font-size:1.2rem; color:#6B4226;">"Savitri Dadi, 67 years young"</p>
+          </div>
+        </div>
+      </div>
+      <div class="story-content reveal-right">
+        <div class="section-label">The Story Behind Every Stitch</div>
+        <h2>Behind every stitch is<br/><em>a lifetime of skill.</em></h2>
+        <p>Our Dadis aren't just employees — they are artists. Women who have carried this ancient craft in their hands for 30, 40, even 50 years, stitching stories into every thread.</p>
+        <p>When you buy from Dadi's Stitches, you're directly funding fair wages for women who deserve dignity and purpose — not just in their youth, but in the golden years too.</p>
+        <div class="story-quote">
+          <div class="story-quote-text">"I have been stitching since I was 12 years old. Now at 67, I stitch for families I'll never meet. That makes my heart full."</div>
+          <div class="story-quote-attr">— Savitri Dadi, Mumbai · 55 years of embroidery</div>
+        </div>
+        <a href="our-story.html" class="btn btn-primary">
+          Meet All Our Dadis
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section class="section process-section" id="process">
+  <div class="container">
+    <div class="text-center mb-48 reveal">
+      <div class="section-label" style="justify-content:center;">How It's Made</div>
+      <h2>From your heart to their hands —<br/>here's how the magic happens</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-line"><div class="process-line-fill" id="processLine"></div></div>
+
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M8 8 L8 22 L14 28 L20 22 L20 8 L26 8 L26 24 L20 30 L14 30 L8 30" stroke="#5B7A52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="28" cy="12" r="8" fill="rgba(91,122,82,.1)" stroke="#5B7A52" stroke-width="1.5"/>
+            <path d="M25 12 L27 14 L31 10" stroke="#5B7A52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="process-step-num">1</span>
+        <h4>You Choose</h4>
+        <p>Pick from our curated collection or describe your dream design. We'll help you find the perfect shirt and embroidery style.</p>
+      </div>
+
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="16" r="8" stroke="#5B7A52" stroke-width="2" fill="none"/>
+            <path d="M8 36 Q8 26 20 26 Q32 26 32 36" stroke="#5B7A52" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M26 8 Q30 6 32 10" stroke="#C8973A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <circle cx="31" cy="11" r="2" fill="#C8973A" opacity="0.6"/>
+          </svg>
+        </div>
+        <span class="process-step-num">2</span>
+        <h4>We Match Your Dadi</h4>
+        <p>Based on your design, we match you with the Dadi whose specialty is closest to your vision. It's a partnership built on skill.</p>
+      </div>
+
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M28 6 L12 22 L10 30 L18 28 L34 12 Z" stroke="#5B7A52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="28" cy="6" r="3" fill="rgba(91,122,82,.2)" stroke="#5B7A52" stroke-width="1.5"/>
+            <path d="M10 30 L8 32" stroke="#5B7A52" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M15 20 Q20 18 24 14" stroke="#C4714F" stroke-width="1" stroke-linecap="round" fill="none" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+        <span class="process-step-num">3</span>
+        <h4>She Stitches (~4 Hours)</h4>
+        <p>Your Dadi begins. Every design takes a minimum of 4 hours of careful, patient work. This is not rushed. This is love, at its own pace.</p>
+      </div>
+
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M8 14 L8 32 Q8 34 10 34 L30 34 Q32 34 32 32 L32 14 L20 8 Z" stroke="#5B7A52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M8 14 L20 8 L32 14" stroke="#5B7A52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M16 24 Q20 28 24 24" stroke="#C4714F" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <circle cx="20" cy="22" r="3" fill="rgba(196,113,79,.2)"/>
+          </svg>
+        </div>
+        <span class="process-step-num">4</span>
+        <h4>Shipped with Love</h4>
+        <p>Packed by hand, with a personal note from your Dadi. Delivered anywhere in India in 5–7 days. Free shipping over ₹2,500.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM ORDERS SECTION -->
+<section class="section custom-section" id="custom">
+  <div class="container">
+    <div class="custom-inner">
+      <div class="custom-content reveal-left">
+        <div class="section-label" style="color:var(--gold-light);">Bespoke Service</div>
+        <h2>Have a vision?<br/><em style="color:var(--gold-light);">Let your Dadi bring it to life.</em></h2>
+        <p>A memory from childhood. A motif that means everything to you. A gift for someone you love. Tell us the story — we'll find the Dadi whose hands are made for it.</p>
+        <div class="custom-steps">
+          <div class="custom-step">
+            <div class="custom-step-num">1</div>
+            <div class="custom-step-text">
+              <h5>Submit your idea</h5>
+              <p>Describe your vision or upload a reference image. No design skills needed.</p>
+            </div>
+          </div>
+          <div class="custom-step">
+            <div class="custom-step-num">2</div>
+            <div class="custom-step-text">
+              <h5>We consult &amp; quote</h5>
+              <p>We estimate Dadi hours, confirm the design, and share a fair price. A small consultation fee applies.</p>
+            </div>
+          </div>
+          <div class="custom-step">
+            <div class="custom-step-num">3</div>
+            <div class="custom-step-text">
+              <h5>Your Dadi stitches it</h5>
+              <p>Matched based on your design style. She'll put her heart into every inch.</p>
+            </div>
+          </div>
+          <div class="custom-step">
+            <div class="custom-step-num">4</div>
+            <div class="custom-step-text">
+              <h5>Delivered to your door</h5>
+              <p>With a handwritten card from your Dadi and free shipping.</p>
+            </div>
+          </div>
+        </div>
+        <a href="custom-order.html" class="btn btn-gold btn-lg">
+          Start Your Custom Order
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <div class="custom-visual reveal-right">
+        <div class="custom-art-box">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="38" stroke="rgba(200,151,58,0.4)" stroke-width="1.5" stroke-dasharray="8 6"/>
+            <path d="M40 18 L40 62 M18 40 L62 40" stroke="rgba(200,151,58,0.6)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M28 28 Q40 20 52 28 Q60 40 52 52 Q40 60 28 52 Q20 40 28 28Z" fill="none" stroke="rgba(200,151,58,0.3)" stroke-width="1.5"/>
+            <circle cx="40" cy="40" r="6" fill="rgba(200,151,58,0.2)" stroke="rgba(200,151,58,0.5)" stroke-width="1.5"/>
+          </svg>
+          <span>"Your childhood memory.<br/>Her lifetime of skill.<br/>One beautiful shirt."</span>
+          <p style="font-size:0.78rem; color:rgba(255,255,255,.35); font-family:var(--font-sans);">Bespoke orders start at ₹800 + labor hours</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section class="section pricing-section" id="pricing">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label" style="justify-content:center;">Transparent Pricing</div>
+      <h2>We believe you deserve to know<br/><em>exactly where your money goes</em></h2>
+      <p style="max-width:560px; margin: 12px auto 0;">Every rupee you spend is accounted for. Here's the full breakdown — including the non-negotiable fair wage we pay every Dadi.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal reveal-delay-1">
+        <div class="pricing-card-head">
+          <h3>What's in your ₹800 shirt</h3>
+        </div>
+        <table class="pricing-table">
+          <tr><td>Base Shirt (Premium cotton)</td><td>₹200</td></tr>
+          <tr><td>Embroidery Supplies (thread, stabilizer)</td><td>₹50</td></tr>
+          <tr><td style="color:var(--sage); font-weight:700;">Dadi's Fair Wage (4 hrs @ ₹100/hr)</td><td style="color:var(--sage);">₹400</td></tr>
+          <tr><td>Business, Packaging & Profit</td><td>₹150</td></tr>
+          <tr class="total-row"><td>Total Selling Price</td><td>₹800</td></tr>
+          <tr class="promise-row"><td colspan="2">The ₹400 Dadi wage is non-negotiable. It is our core promise.</td></tr>
+        </table>
+      </div>
+      <div class="pricing-card reveal reveal-delay-2">
+        <div class="pricing-card-head">
+          <h3>Shipping across India</h3>
+        </div>
+        <table class="pricing-table">
+          <tr><td>Local (Mumbai / Navi Mumbai)</td><td>₹99</td></tr>
+          <tr><td>Regional (Gujarat, Karnataka…)</td><td>₹199</td></tr>
+          <tr><td>National (Assam, Punjab, Kerala…)</td><td>₹299</td></tr>
+          <tr class="total-row"><td>Orders over ₹2,500</td><td>FREE ✦</td></tr>
+          <tr class="promise-row"><td colspan="2">Flat ₹199 for all orders under ₹2,500 — simple &amp; fair.</td></tr>
+        </table>
+      </div>
+    </div>
+    <p class="pricing-note reveal">Delivered in 5–7 business days via Shiprocket/India Post. Rush delivery available for ₹100–200 extra.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label" style="justify-content:center;">From Our Customers</div>
+      <h2>What happens when<br/><em>people wear stories</em></h2>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-quote-mark">"</div>
+        <div class="testimonial-stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"I cried when I opened the package and read the note about my Dadi. This is genuinely the most meaningful purchase I've ever made. The embroidery is breathtaking."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">P</div>
+          <div>
+            <div class="testimonial-name">Priya M.</div>
+            <div class="testimonial-loc">Mumbai, Maharashtra</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-quote-mark">"</div>
+        <div class="testimonial-stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"The embroidery quality is unbelievable. I've worn the Wildflower Tee 20+ times and it still looks perfect — no fading, no loosening. Worth every rupee and more."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Arjun T.</div>
+            <div class="testimonial-loc">Bengaluru, Karnataka</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-quote-mark">"</div>
+        <div class="testimonial-stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"Gifted this to my mom for her birthday. She called it 'the most beautiful shirt she's ever owned' and asked if she could order one for her dadi-friend too. You've built something truly special."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sneha R.</div>
+            <div class="testimonial-loc">New Delhi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner reveal">
+      <div class="section-label" style="justify-content:center; color:var(--gold-light);">Stay Connected</div>
+      <h2>Join the<br/><em style="color:var(--gold-light);">Dadi's Circle</em></h2>
+      <p>New shirt drops, Dadi stories, behind-the-scenes from our embroidery sessions, and exclusive early access — delivered to your inbox with care.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" class="newsletter-input" placeholder="your@email.com" required />
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
+      <p class="newsletter-disclaimer">No spam. Just love letters from our Dadis. Unsubscribe any time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-logo">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#C4714F" stroke-width="1.5" fill="none"/><path d="M8 14 Q11 8, 14 14 Q17 20, 20 14" stroke="#C4714F" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="8" cy="14" r="1.5" fill="#C4714F"/><path d="M8 10 L8 6 L10 6" stroke="#EDD9A3" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Dadi's Stitches
+        </div>
+        <p class="footer-brand-desc">A social enterprise from Mumbai, India — creating dignified livelihoods for skilled grandmothers through the art of hand embroidery.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Shop</div>
+        <ul>
+          <li><a href="shop.html">All Shirts</a></li>
+          <li><a href="shop.html">Tees</a></li>
+          <li><a href="shop.html">Seersucker</a></li>
+          <li><a href="shop.html">Linen</a></li>
+          <li><a href="custom-order.html">Custom Orders</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Learn</div>
+        <ul>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="our-story.html#dadis">Meet the Dadis</a></li>
+          <li><a href="index.html#process">How It's Made</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Help</div>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Care Instructions</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Dadi's Stitches. Made with ♥ and thread. A Social Enterprise from Mumbai, India.</p>
+      <div class="footer-tagline">Stitched with love. Worn with purpose.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  function openMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // Newsletter
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = '✓ You\'re in!';
+    btn.style.background = 'var(--sage)';
+    setTimeout(() => { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+  // Process line animation
+  const lineObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.getElementById('processLine').style.width = '100%';
+        lineObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  const processSection = document.getElementById('process');
+  if (processSection) lineObserver.observe(processSection);
+
+  // Add to cart button animations
+  document.querySelectorAll('.btn-add-cart').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (this.tagName === 'BUTTON') {
+        e.preventDefault();
+        const orig = this.textContent;
+        this.textContent = '✓ Added!';
+        this.style.background = 'var(--sage)';
+        this.style.color = 'white';
+        this.style.borderColor = 'var(--sage)';
+        // Update cart badge
+        const badge = document.querySelector('.cart-badge');
+        if (badge) badge.textContent = parseInt(badge.textContent || 0) + 1;
+        setTimeout(() => {
+          this.textContent = orig;
+          this.style.background = '';
+          this.style.color = '';
+          this.style.borderColor = '';
+        }, 2000);
+      }
+    });
+  });
+</script>
+</body>
+</html>
