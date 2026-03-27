@@ -1,8 +1,18 @@
 {
-  "rewrites": [
-    { "source": "/shop", "destination": "/shop.html" },
-    { "source": "/product", "destination": "/product.html" },
-    { "source": "/our-story", "destination": "/our-story.html" },
-    { "source": "/custom-order", "destination": "/custom-order.html" }
+  "version": 2,
+  "builds": [
+    { "src": "website/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/website/index.html" },
+    { "src": "/shop", "dest": "/website/shop.html" },
+    { "src": "/shop.html", "dest": "/website/shop.html" },
+    { "src": "/product", "dest": "/website/product.html" },
+    { "src": "/product.html", "dest": "/website/product.html" },
+    { "src": "/our-story", "dest": "/website/our-story.html" },
+    { "src": "/our-story.html", "dest": "/website/our-story.html" },
+    { "src": "/custom-order", "dest": "/website/custom-order.html" },
+    { "src": "/custom-order.html", "dest": "/website/custom-order.html" },
+    { "src": "/(.*)", "dest": "/website/$1" }
   ]
 }
